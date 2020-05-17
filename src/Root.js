@@ -1,21 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import Container from "./Components/Container";
 
-const Container = styled.div`
-    background-color: #fff;
-    width: 50%;
-    height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-const SectionHeader = styled.div`
+const HeaderSection = styled.div`
     width: 77%;
     height: 18%;
     margin: 7% 0 3% 0;
     padding: 1% 3%;
+`;
+
+const ScoreSection = styled.div`
+    display: flex;
+    justify-content: space-between;
 `;
 
 const Logo = styled.h1`
@@ -51,6 +47,18 @@ const PinkSquare = styled.div`
     left: 10%;
 `;
 
+const ButtonsSection = styled.div`
+    width: 58%;
+    display: flex;
+    justify-content: space-between;
+`;
+
+const GameSection = styled.div`
+    padding-top: 5%;
+    display: flex;
+    justify-content: space-between;
+`;
+
 const GameGridWrapper = styled.div`
     background-color: #fff;
     border: 3px solid #bfb1f8;
@@ -74,40 +82,30 @@ const GameGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    padding: 1%;
 `;
 
 const Element = styled.div`
-    width: 11.5rem;
-    height: 11.5rem;
+    width: 90%;
+    height: 90%;
+    font-size: 5.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
     background-color: #f1edff;
     border-radius: 5%;
     align-self: center;
     justify-self: center;
 `;
 
-const Test = styled.div`
-    display: flex;
-    justify-content: space-between;
-`;
-
-const ButtonsSection = styled.div`
-    width: 58%;
-    display: flex;
-    justify-content: space-between;
-`;
-
-const Test2 = styled.div`
-    padding-top: 5%;
-    display: flex;
-    justify-content: space-between;
-`;
-
-function App() {
+function Root() {
     return (
         <div>
             <Container>
-                <SectionHeader>
-                    <Test>
+                <HeaderSection>
+                    <ScoreSection>
                         <Logo>2048</Logo>
                         <ButtonsSection>
                             <Button>
@@ -121,8 +119,8 @@ function App() {
                                 <PinkSquare></PinkSquare>
                             </Button>
                         </ButtonsSection>
-                    </Test>
-                    <Test2>
+                    </ScoreSection>
+                    <GameSection>
                         <Text>
                             Zagraj w 2048<br></br> Połącz numery i dostań się do płytki 2048!
                         </Text>
@@ -130,30 +128,30 @@ function App() {
                             <strong>New game!</strong>
                             <PinkSquare></PinkSquare>
                         </Button>
-                    </Test2>
-                </SectionHeader>
+                    </GameSection>
+                </HeaderSection>
                 <GameGridWrapper>
                     <GameGrid>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
-                        <Element></Element>
+                        <Element>2</Element>
+                        <Element>8</Element>
+                        <Element>2</Element>
+                        <Element>64</Element>
+                        <Element>8</Element>
+                        <Element>32</Element>
+                        <Element>32</Element>
+                        <Element>16</Element>
+                        <Element>4</Element>
+                        <Element>4</Element>
+                        <Element>2</Element>
+                        <Element>256</Element>
+                        <Element>64</Element>
+                        <Element>16</Element>
+                        <Element>2</Element>
+                        <Element>32</Element>
                     </GameGrid>
                 </GameGridWrapper>
             </Container>
         </div>
     );
 }
-export default App;
+export default Root;
