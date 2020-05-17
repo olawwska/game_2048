@@ -62,7 +62,7 @@ const GameGridWrapper = styled.div`
     left: 2%;
 `;
 
-const GameGrid = styled(GameGridWrapper)`
+const GameGrid = styled.div`
     background-color: #fff;
     border: 3px solid #bfb1f8;
     border-radius: 5px;
@@ -71,6 +71,18 @@ const GameGrid = styled(GameGridWrapper)`
     position: relative;
     top: -2%;
     left: -2%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+`;
+
+const Element = styled.div`
+    width: 11.5rem;
+    height: 11.5rem;
+    background-color: #f1edff;
+    border-radius: 5%;
+    align-self: center;
+    justify-self: center;
 `;
 
 const Test = styled.div`
@@ -112,7 +124,7 @@ function App() {
                     </Test>
                     <Test2>
                         <Text>
-                            Zagraj w 2048<br></br> Połącz numery i dostań się do płytki 2048
+                            Zagraj w 2048<br></br> Połącz numery i dostań się do płytki 2048!
                         </Text>
                         <Button>
                             <strong>New game!</strong>
@@ -121,7 +133,24 @@ function App() {
                     </Test2>
                 </SectionHeader>
                 <GameGridWrapper>
-                    <GameGrid />
+                    <GameGrid>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                        <Element></Element>
+                    </GameGrid>
                 </GameGridWrapper>
             </Container>
         </div>
